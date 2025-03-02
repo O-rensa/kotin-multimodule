@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.orensa.multi_module.ui.theme.MultimoduleTheme
+import com.orensa.network.NetworkMessage
 
 class MainActivity : ComponentActivity() {
+    private var network = NetworkMessage()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,7 +23,7 @@ class MainActivity : ComponentActivity() {
             MultimoduleTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        message = network.message,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,9 +33,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(message: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = message,
         modifier = modifier
     )
 }

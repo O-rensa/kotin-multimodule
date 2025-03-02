@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "multi-module"
 include(":app")
+include(":network")
