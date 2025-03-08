@@ -18,8 +18,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.orensa.multi_module.ui.theme.MultimoduleTheme
-import com.orensa.network.Character
 import com.orensa.network.KtorClient
+import com.orensa.network.models.domain.Character
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {

@@ -11,6 +11,7 @@ android {
     defaultConfig {
         minSdk = 24
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -35,7 +36,11 @@ android {
 
 dependencies {
     //ktor
-    implementation(libs.bundles.ktor);
+    implementation(libs.bundles.ktor)
+
+    // compose-bom
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui.graphics)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
